@@ -14,3 +14,6 @@ def equipmentTest():
     assert crossbow.getName() == 'Crossbow'
     assert crossbow.getBreakage() == 56
     assert crossbow.getPrice() == 123
+
+    crossbow.repair()
+    assert crossbow.getBreakage() == 0

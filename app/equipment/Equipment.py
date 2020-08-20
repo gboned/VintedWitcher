@@ -6,6 +6,10 @@ class Equipment:
         self.breakage = breakage
         self.price = price
 
+    def repair(self):
+        self.breakage = 0
+        print(f'Repaired {self.name}.')
+
     def getName(self):
         return self.name
 
