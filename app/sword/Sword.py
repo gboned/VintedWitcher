@@ -1,5 +1,5 @@
 from app.equipment.Equipment import Equipment
-
+from abc import ABC, abstractmethod
 
 class Sword(Equipment):
 
@@ -7,9 +7,9 @@ class Sword(Equipment):
         super().__init__(name, description, breakage, price)
         self.sharpering = sharpering
 
+    @abstractmethod
     def sharp(self):
-        self.sharpering = 100
-        print(f'Sharpered {self.name}.')
+        pass
 
     def getSharpering(self):
         return self.sharpering

@@ -1,7 +1,7 @@
 from app.equipment.Equipment import Equipment
 from app.sword.Sword import Sword
 # from app.silverSword.SilverSword import SilverSword
-# from app.steelSword.SteelSword import SteelSword
+from app.steelSword.SteelSword import SteelSword
 # from app.specialEquipment.SpecialEquipment import SpecialEquipment
 # from app.specialSteelSword.SpecialSteelSword import SpecialSteelSword
 from app.vintedWitcher.VintedWitcher import VintedWitcher
@@ -108,7 +108,7 @@ def main():
 
     # Creamos una espada...
 
-    rustySword = Sword(
+    rustySword = SteelSword(
         'Rusty Sword',    # name
         '''Is a steel sword in The Witcher and is the first weapon Geralt 
         receives in the Prologue.''', # description

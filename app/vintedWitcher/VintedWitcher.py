@@ -19,8 +19,8 @@ class VintedWitcher:
         print(f'Price: {self.servicePrice} crowns.')
 
     def makeSharpering(self, component):
-        component.sharp() # Afila el componente
-        # print(f'Price: {self.servicePrice} crowns.')
+        self.servicePrice = component.sharp() # Afila el componente y devuelve el precio del servicio
+        print(f'Price: {self.servicePrice} crowns.')
 
     def getLocation(self):
         return self.location
