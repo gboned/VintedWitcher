@@ -25,6 +25,9 @@ def vintedWitcherTest():
     assert len(vintedWitcherInstance.getStock()) == 1
     assert vintedWitcherInstance.getStock()[0].getName() == crossbow.getName()
 
-    
+    vintedWitcherInstance.sell(crossbow)
+    assert vintedWitcherInstance.getStock() == []
+
+
 if __name__ == '__main__':
     vintedWitcherTest()

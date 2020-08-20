@@ -8,6 +8,11 @@ class VintedWitcher:
     def addToStock(self, component):
         self.stock.append(component)
 
+    def sell(self, component):
+        self.stock.remove(component)
+        print(f'{component.getName()} has been sold for ' + \
+             str(component.getPrice()) + ' crowns.')
+
     def getLocation(self):
         return self.location
 
