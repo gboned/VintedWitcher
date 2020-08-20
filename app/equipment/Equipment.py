@@ -7,8 +7,12 @@ class Equipment:
         self.price = price
 
     def repair(self):
+        servicePrice = 0
+        if self.breakage > 40:
+            servicePrice = self.breakage * 2
         self.breakage = 0
         print(f'Repaired {self.name}.')
+        return servicePrice
 
     def getName(self):
         return self.name

@@ -29,5 +29,16 @@ def vintedWitcherTest():
     assert vintedWitcherInstance.getStock() == []
 
 
+    assaultGauntlets = Equipment(
+        'Assaunt Gauntlets',# name
+        'These are heavy armor gauntlets.',    # description
+        60,     # breakage (in %)
+        80,     # price (in crowns)
+    )
+
+    vintedWitcherInstance.makeRepair(assaultGauntlets)
+    assert assaultGauntlets.getBreakage() == 0
+    assert vintedWitcherInstance.getServicePrice() == 120
+
 if __name__ == '__main__':
     vintedWitcherTest()
