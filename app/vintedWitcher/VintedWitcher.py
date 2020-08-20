@@ -18,6 +18,10 @@ class VintedWitcher:
         self.servicePrice = component.repair() # Repara el componente y devuelve el precio del servicio
         print(f'Price: {self.servicePrice} crowns.')
 
+    def makeSharpering(self, component):
+        component.sharp() # Afila el componente
+        # print(f'Price: {self.servicePrice} crowns.')
+
     def getLocation(self):
         return self.location
 

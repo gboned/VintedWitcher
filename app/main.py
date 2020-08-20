@@ -1,5 +1,5 @@
 from app.equipment.Equipment import Equipment
-# from app.sword.Sword import Sword
+from app.sword.Sword import Sword
 # from app.silverSword.SilverSword import SilverSword
 # from app.steelSword.SteelSword import SteelSword
 # from app.specialEquipment.SpecialEquipment import SpecialEquipment

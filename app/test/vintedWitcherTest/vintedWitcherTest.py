@@ -1,5 +1,6 @@
 from app.vintedWitcher.VintedWitcher import VintedWitcher
 from app.equipment.Equipment import Equipment
+from app.sword.Sword import Sword
 
 
 def vintedWitcherTest():
@@ -39,6 +40,24 @@ def vintedWitcherTest():
     vintedWitcherInstance.makeRepair(assaultGauntlets)
     assert assaultGauntlets.getBreakage() == 0
     assert vintedWitcherInstance.getServicePrice() == 120
+
+
+    rustySword = Sword(
+        'Rusty Sword',    # name
+        '''Is a steel sword in The Witcher and is the first weapon Geralt 
+        receives in the Prologue.''', # description
+        80,     # breakage (in %)
+        50,     # price (in crowns)
+        10,     # shapering (in %)      
+    )
+
+    vintedWitcherInstance.makeRepair(rustySword)
+    assert rustySword.getBreakage() == 0
+    assert vintedWitcherInstance.getServicePrice() == 160
+
+    vintedWitcherInstance.makeSharpering(rustySword)
+    assert rustySword.getSharpering() == 100
+
 
 if __name__ == '__main__':
     vintedWitcherTest()
