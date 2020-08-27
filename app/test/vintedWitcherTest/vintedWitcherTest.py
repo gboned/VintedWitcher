@@ -2,6 +2,7 @@ from app.vintedWitcher.VintedWitcher import VintedWitcher
 from app.equipment.Equipment import Equipment
 from app.sword.Sword import Sword
 from app.steelSword.SteelSword import SteelSword
+from app.silverSword.SilverSword import SilverSword
 
 
 def vintedWitcherTest():
@@ -59,6 +60,22 @@ def vintedWitcherTest():
     vintedWitcherInstance.makeSharpering(rustySword)
     assert rustySword.getSharpering() == 100
     vintedWitcherInstance.getServicePrice() == 135
+
+    eirlithrad = SilverSword(
+        'Eirlithrad',   # name
+        'It is a silver sword for killing monsters.',   # description
+        20,     # breakage (in %)
+        300,    # price (in crowns)
+        40,     # sharpering     
+    )
+
+    vintedWitcherInstance.makeRepair(eirlithrad)
+    assert eirlithrad.getBreakage() == 0
+    assert vintedWitcherInstance.getServicePrice() == 0
+
+    vintedWitcherInstance.makeSharpering(eirlithrad)
+    assert eirlithrad.getSharpering() == 100
+    vintedWitcherInstance.getServicePrice() == 180
 
 
 if __name__ == '__main__':
