@@ -4,7 +4,7 @@ from app.sword.Sword import Sword
 class SteelSword(Sword):
 
     def __init__(self, name, description, breakage, price, sharpering):
-        super().__init__(name, description, breakage, price, sharpering)
+        Sword.__init__(self, name, description, breakage, price, sharpering)
 
     def sharp(self):
         servicePrice = 0

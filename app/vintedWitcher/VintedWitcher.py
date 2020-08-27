@@ -1,3 +1,6 @@
+from app.specialEquipment.SpecialEquipment import SpecialEquipment
+
+
 class VintedWitcher:
 
     def __init__(self, location, stock):
@@ -21,6 +24,14 @@ class VintedWitcher:
     def makeSharpering(self, component):
         self.servicePrice = component.sharp() # Afila el componente y devuelve el precio del servicio
         print(f'Price: {self.servicePrice} crowns.')
+
+    def findSpecialSet(self, school):
+        specialComponents = []
+        for component in self.stock:
+           if isinstance(component, SpecialEquipment):
+               if component.getSchool() == school:
+                   specialComponents.append(component)
+        return specialComponents
 
     def getLocation(self):
         return self.location

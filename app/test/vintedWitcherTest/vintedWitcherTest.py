@@ -3,6 +3,7 @@ from app.equipment.Equipment import Equipment
 from app.sword.Sword import Sword
 from app.steelSword.SteelSword import SteelSword
 from app.silverSword.SilverSword import SilverSword
+from app.specialSteelSword.SpecialSteelSword import SpecialSteelSword
 
 
 def vintedWitcherTest():
@@ -76,6 +77,32 @@ def vintedWitcherTest():
     vintedWitcherInstance.makeSharpering(eirlithrad)
     assert eirlithrad.getSharpering() == 100
     vintedWitcherInstance.getServicePrice() == 180
+
+    wolvenSteelSword = SpecialSteelSword(
+        'Wolven Steel Sword',  #name
+        'A craftable steel sword.',  # description
+        70,     # breakage (in %)
+        800,    # price (in crowns)
+        30,     # shapering (in %)
+        'Wolf School',      # witcher school
+    )
+
+    crossbow = Equipment(
+        'Crossbow',     # name
+        '''A mechanically assisted bow which is used when more power is 
+        required, either to launch heavier projectiles or to launch a more 
+        conventional one a longer distance.''',    # description
+        56,     # breakage (in %)
+        123     # price (in crowns)
+    )
+
+    vintedWitcherInstance.addToStock(wolvenSteelSword)
+    vintedWitcherInstance.addToStock(crossbow)
+    wolvenComponents = vintedWitcherInstance.findSpecialSet('Wolf School')
+    assert len(wolvenComponents) == 1
+
+    for component in wolvenComponents:
+        assert component.getSchool() == 'Wolf School'
 
 
 if __name__ == '__main__':
