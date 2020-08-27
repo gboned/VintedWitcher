@@ -7,6 +7,10 @@ class SpecialEquipment(Equipment):
         Equipment.__init__(self, name, description, breakage, price)
         self.school = school
 
+    def specialRepair(self):
+        specialPrice = self.repair() * 2
+        return specialPrice
+
     def getSchool(self):
         return self.school
 

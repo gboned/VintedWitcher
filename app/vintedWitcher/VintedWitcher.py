@@ -18,11 +18,17 @@ class VintedWitcher:
              str(component.getPrice()) + ' crowns.')
 
     def makeRepair(self, component):
-        self.servicePrice = component.repair() # Repara el componente y devuelve el precio del servicio
+        if isinstance(component, SpecialEquipment):
+            self.servicePrice = component.specialRepair()
+        else:
+            self.servicePrice = component.repair() # Repara el componente y devuelve el precio del servicio
         print(f'Price: {self.servicePrice} crowns.')
 
     def makeSharpering(self, component):
-        self.servicePrice = component.sharp() # Afila el componente y devuelve el precio del servicio
+        if isinstance(component, SpecialEquipment):
+            self.servicePrice = component.specialSharp()
+        else:
+            self.servicePrice = component.sharp() # Afila el componente y devuelve el precio del servicio
         print(f'Price: {self.servicePrice} crowns.')
 
     def findSpecialSet(self, school):

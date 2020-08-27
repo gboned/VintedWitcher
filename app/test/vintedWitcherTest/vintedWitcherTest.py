@@ -104,6 +104,12 @@ def vintedWitcherTest():
     for component in wolvenComponents:
         assert component.getSchool() == 'Wolf School'
 
+    vintedWitcherInstance.makeRepair(wolvenSteelSword)
+    assert vintedWitcherInstance.getServicePrice() == 280
+
+    vintedWitcherInstance.makeSharpering(wolvenSteelSword)
+    assert vintedWitcherInstance.getServicePrice() == 210
+
 
 if __name__ == '__main__':
     vintedWitcherTest()
